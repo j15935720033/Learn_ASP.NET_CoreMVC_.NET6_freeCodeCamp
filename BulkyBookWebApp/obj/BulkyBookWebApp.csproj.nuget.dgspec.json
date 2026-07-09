@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\TotalLearning\\OnlineLearning\\YoutubeLerning\\freeCodeCamp\\Learn_ASP.NET6_Core_MVC-DotNetMastery\\BulkyBook\\BulkyBookWebApp\\BulkyBookWebApp.csproj": {}
+    "d:\\台中勞動部全端網頁_workspace\\Workspace\\ASPNET\\Learn_ASP.NET_CoreMVC_.NET6_freeCodeCamp\\BulkyBookWebApp\\BulkyBookWebApp.csproj": {}
   },
   "projects": {
-    "D:\\TotalLearning\\OnlineLearning\\YoutubeLerning\\freeCodeCamp\\Learn_ASP.NET6_Core_MVC-DotNetMastery\\BulkyBook\\BulkyBookWebApp\\BulkyBookWebApp.csproj": {
+    "d:\\台中勞動部全端網頁_workspace\\Workspace\\ASPNET\\Learn_ASP.NET_CoreMVC_.NET6_freeCodeCamp\\BulkyBookWebApp\\BulkyBookWebApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\TotalLearning\\OnlineLearning\\YoutubeLerning\\freeCodeCamp\\Learn_ASP.NET6_Core_MVC-DotNetMastery\\BulkyBook\\BulkyBookWebApp\\BulkyBookWebApp.csproj",
+        "projectUniqueName": "d:\\台中勞動部全端網頁_workspace\\Workspace\\ASPNET\\Learn_ASP.NET_CoreMVC_.NET6_freeCodeCamp\\BulkyBookWebApp\\BulkyBookWebApp.csproj",
         "projectName": "BulkyBookWebApp",
-        "projectPath": "D:\\TotalLearning\\OnlineLearning\\YoutubeLerning\\freeCodeCamp\\Learn_ASP.NET6_Core_MVC-DotNetMastery\\BulkyBook\\BulkyBookWebApp\\BulkyBookWebApp.csproj",
-        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-        "outputPath": "D:\\TotalLearning\\OnlineLearning\\YoutubeLerning\\freeCodeCamp\\Learn_ASP.NET6_Core_MVC-DotNetMastery\\BulkyBook\\BulkyBookWebApp\\obj\\",
+        "projectPath": "d:\\台中勞動部全端網頁_workspace\\Workspace\\ASPNET\\Learn_ASP.NET_CoreMVC_.NET6_freeCodeCamp\\BulkyBookWebApp\\BulkyBookWebApp.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "d:\\台中勞動部全端網頁_workspace\\Workspace\\ASPNET\\Learn_ASP.NET_CoreMVC_.NET6_freeCodeCamp\\BulkyBookWebApp\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -34,7 +37,13 @@
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net6.0": {
@@ -69,7 +78,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -81,7 +91,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.205\\RuntimeIdentifierGraph.json"
         }
       }
     }

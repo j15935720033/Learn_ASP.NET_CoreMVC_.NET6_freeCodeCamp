@@ -63,7 +63,7 @@
   --bs-body-font-weight: 400;
   --bs-body-line-height: 1.5;
   --bs-body-color: #839496;
-  --bs-body-bg: #002b36;
+  --bs-body-bg: #b9bcbd;
 }
 
 *,
@@ -1897,6 +1897,7 @@ progress {
 }
 
 .table {
+  /* transparent : 完全透明，不顯示自己的背景色 */
   --bs-table-bg: transparent;
   --bs-table-accent-bg: rgba(255, 255, 255, 0.05);
   --bs-table-striped-color: #839496;
@@ -1912,8 +1913,10 @@ progress {
   border-color: #073642;
 }
 
+/* :not(caption) : 除了 caption 以外 */
 .table > :not(caption) > * > * {
   padding: 0.5rem 0.5rem;
+  /* --bs-table-bg 如果設定 完全透明，不顯示自己的背景色。 */
   background-color: var(--bs-table-bg);
   border-bottom-width: 1px;
   box-shadow: inset 0 0 0 9999px var(--bs-table-accent-bg);
@@ -1955,6 +1958,12 @@ progress {
   border-top-width: 0;
 }
 
+/* 
+  .table-striped : 找到 class 是 table-striped 的元素 
+  > : 子選擇器 選父元素 裡「第1層子元素」，不會選到孫子層、曾孫層。下一層一思
+  tr:nth-of-type(odd) :選取奇數列的 <tr>
+  >* : 下一層裡所有直接子元素
+*/
 .table-striped > tbody > tr:nth-of-type(odd) > * {
   --bs-table-accent-bg: var(--bs-table-striped-bg);
   color: var(--bs-table-striped-color);
