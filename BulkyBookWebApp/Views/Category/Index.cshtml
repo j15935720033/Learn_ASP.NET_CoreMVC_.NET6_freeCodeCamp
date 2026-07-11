@@ -1,4 +1,12 @@
-﻿@model IEnumerable<Category>
+﻿
+@* 
+    @model : 指定這個 View 要接收的資料型別
+    IEnumerable<T> : 表示可以逐筆列舉的集合
+    Category : 集合內每一筆資料的型別
+    IEnumerable<Category> : 多筆 `Category` 資料
+*@
+@model IEnumerable<Category>
+
 @{
     ViewData["Title"] = "Index";
 }
@@ -10,7 +18,8 @@
         </div>
         <div class="col-6 text-end">
             <a asp-controller="Category" asp-action="Create" class="btn btn-primary">
-                <i class="bi bi-plus-circle"></i> &nbsp; Create New Category</a>
+                <i class="bi bi-plus-circle"></i> &nbsp; Create New Category
+            </a>
         </div>
     </div>
     <table class="table table-bordered table-striped" style="width:100%">
