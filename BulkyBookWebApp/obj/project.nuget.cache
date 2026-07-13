@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "WRiCwAopevA=",
+  "dgSpecHash": "+fz9Cc/ljEI=",
   "success": true,
-  "projectFilePath": "D:\\台中勞動部全端網頁_workspace\\Workspace\\ASPNET\\Learn_ASP.NET_CoreMVC_.NET6_freeCodeCamp\\BulkyBookWebApp\\BulkyBookWebApp.csproj",
+  "projectFilePath": "d:\\台中勞動部全端網頁_workspace\\Workspace\\ASPNET\\Learn_ASP.NET_CoreMVC_.NET6_freeCodeCamp\\BulkyBookWebApp\\BulkyBookWebApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\User\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",

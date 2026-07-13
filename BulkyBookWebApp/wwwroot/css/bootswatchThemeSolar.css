@@ -2018,12 +2018,12 @@ progress {
 .table-info {
   --bs-table-bg: #268bd2;
   --bs-table-striped-bg: #3191d4;
-  --bs-table-striped-color: #fff;
+  --bs-table-striped-color: #e8e8e8;
   --bs-table-active-bg: #3c97d7;
-  --bs-table-active-color: #fff;
+  --bs-table-active-color: #e8e8e8;
   --bs-table-hover-bg: #3694d5;
-  --bs-table-hover-color: #fff;
-  color: #fff;
+  --bs-table-hover-color: #e8e8e8;
+  color: #e8e8e8;
   border-color: #3c97d7;
 }
 

@@ -1,5 +1,4 @@
-﻿
-@* 
+﻿@*
     @model : 指定這個 View 要接收的資料型別
     IEnumerable<T> : 表示可以逐筆列舉的集合
     Category : 集合內每一筆資料的型別
@@ -14,24 +13,25 @@
 <div class="container p-3">
     <div class="row mt-4 mb-4">
         <div class="col-6">
-            <h2 class="text-primary">Category List</h2>
+            <h2 class="text-dark">Category List</h2>
         </div>
         <div class="col-6 text-end">
-            <a asp-controller="Category" asp-action="Create" class="btn btn-primary">
+            <a asp-controller="Category" asp-action="Create" class="btn btn-dark">
                 <i class="bi bi-plus-circle"></i> &nbsp; Create New Category
             </a>
         </div>
     </div>
     <table class="table table-bordered table-striped" style="width:100%">
-          <thead>
-              <tr>
-                  <th>Category Name</th>
-                  <th>Display Order</th>
-                  <th>Actions</th>
-              </tr>
-          </thead>
-          <tbody>
-            @foreach(var obj in Model)
+        <!-- 使用深色表頭 -->
+        <thead class="table-info">
+            <tr>
+                <th>Category Name</th>
+                <th>Display Order</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var obj in Model)
             {
                 <tr>
                     <td width="50%">
@@ -40,7 +40,7 @@
                     <td width="30%">
                         @obj.DisplayOrder
                     </td>
-                    <td  width="20%">
+                    <td width="20%">
                         <div class="btn-group" role="group">
                             <a asp-controller="Category" asp-action="Edit" asp-route-id="@obj.Id" class="btn btn-primary">
                                 <i class="bi bi-pencil-square"></i> &nbsp; Edit

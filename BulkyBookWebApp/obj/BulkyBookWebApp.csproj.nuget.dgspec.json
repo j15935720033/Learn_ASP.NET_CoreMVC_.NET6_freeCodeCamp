@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\台中勞動部全端網頁_workspace\\Workspace\\ASPNET\\Learn_ASP.NET_CoreMVC_.NET6_freeCodeCamp\\BulkyBookWebApp\\BulkyBookWebApp.csproj": {}
+    "d:\\台中勞動部全端網頁_workspace\\Workspace\\ASPNET\\Learn_ASP.NET_CoreMVC_.NET6_freeCodeCamp\\BulkyBookWebApp\\BulkyBookWebApp.csproj": {}
   },
   "projects": {
-    "D:\\台中勞動部全端網頁_workspace\\Workspace\\ASPNET\\Learn_ASP.NET_CoreMVC_.NET6_freeCodeCamp\\BulkyBookWebApp\\BulkyBookWebApp.csproj": {
+    "d:\\台中勞動部全端網頁_workspace\\Workspace\\ASPNET\\Learn_ASP.NET_CoreMVC_.NET6_freeCodeCamp\\BulkyBookWebApp\\BulkyBookWebApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\台中勞動部全端網頁_workspace\\Workspace\\ASPNET\\Learn_ASP.NET_CoreMVC_.NET6_freeCodeCamp\\BulkyBookWebApp\\BulkyBookWebApp.csproj",
+        "projectUniqueName": "d:\\台中勞動部全端網頁_workspace\\Workspace\\ASPNET\\Learn_ASP.NET_CoreMVC_.NET6_freeCodeCamp\\BulkyBookWebApp\\BulkyBookWebApp.csproj",
         "projectName": "BulkyBookWebApp",
-        "projectPath": "D:\\台中勞動部全端網頁_workspace\\Workspace\\ASPNET\\Learn_ASP.NET_CoreMVC_.NET6_freeCodeCamp\\BulkyBookWebApp\\BulkyBookWebApp.csproj",
+        "projectPath": "d:\\台中勞動部全端網頁_workspace\\Workspace\\ASPNET\\Learn_ASP.NET_CoreMVC_.NET6_freeCodeCamp\\BulkyBookWebApp\\BulkyBookWebApp.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "D:\\台中勞動部全端網頁_workspace\\Workspace\\ASPNET\\Learn_ASP.NET_CoreMVC_.NET6_freeCodeCamp\\BulkyBookWebApp\\obj\\",
+        "outputPath": "d:\\台中勞動部全端網頁_workspace\\Workspace\\ASPNET\\Learn_ASP.NET_CoreMVC_.NET6_freeCodeCamp\\BulkyBookWebApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
