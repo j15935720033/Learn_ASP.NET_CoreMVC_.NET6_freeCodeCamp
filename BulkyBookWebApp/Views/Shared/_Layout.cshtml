@@ -1,48 +1,318 @@
 ﻿<!DOCTYPE html>
+
+@* 
+    lang="en" 表示此網頁的主要語言是英文。
+    如果網站主要使用繁體中文，可以改成 lang="zh-TW"。
+*@
 <html lang="en">
+
 <head>
+    @* 設定網頁使用 UTF-8 字元編碼，避免中文出現亂碼。 *@
     <meta charset="utf-8" />
+
+    @*
+        設定響應式網頁的顯示方式。
+        width=device-width：網頁寬度等於裝置螢幕寬度。
+        initial-scale=1.0：初始縮放比例為 100%。
+    *@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    @*
+        設定瀏覽器分頁標題。
+
+        @ViewData["Title"]
+        會讀取每個 View 中設定的標題。
+
+        例如：
+        ViewData["Title"] = "Home";
+
+        最後顯示為：
+        Home - BulkyBookWebApp
+    *@
     <title>@ViewData["Title"] - BulkyBookWebApp</title>
-    <link rel="stylesheet" href="~/css//bootswatchThemeSolar.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/BulkyBookWebApp.styles.css" asp-append-version="true" />
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+    @*
+        載入 Bootswatch Solar 主題樣式。
+
+        ~/ 代表從網站根目錄 wwwroot 開始尋找。
+        實際檔案位置為：
+        wwwroot/css/bootswatchThemeSolar.css
+    *@
+    <link rel="stylesheet" href="~/css/bootswatchThemeSolar.css" />
+
+    @*
+        載入網站共用的自訂 CSS。
+
+        asp-append-version="true"
+        會自動在網址後面加入檔案版本碼，
+        避免瀏覽器持續使用舊的快取 CSS。
+    *@
+    <link rel="stylesheet"
+          href="~/css/site.css"
+          asp-append-version="true" />
+
+    @*
+        載入 ASP.NET Core CSS Isolation 產生的樣式檔。
+
+        例如：
+        _Layout.cshtml.css
+        Index.cshtml.css
+
+        編譯後的隔離樣式會集中到這個檔案中。
+    *@
+    <link rel="stylesheet"
+          href="~/BulkyBookWebApp.styles.css"
+          asp-append-version="true" />
+
+    @*
+        從 CDN 載入 Toastr 的 CSS。
+
+        Toastr 可以用來顯示：
+        成功、錯誤、警告、提示等通知訊息。
+    *@
+    <link rel="stylesheet"
+          href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
+
+    @*
+        從 CDN 載入 Bootstrap Icons。
+
+        載入後可以使用：
+        <i class="bi bi-pencil"></i>
+        <i class="bi bi-trash"></i>
+    *@
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" />
 </head>
+
 <body>
+
+    @* 網頁上方導覽列區域。 *@
     <header>
+
+        @*
+            建立 Bootstrap 導覽列。
+
+            navbar-expand-lg：
+            畫面寬度達到 lg 時，完整展開導覽列。
+
+            navbar-dark：
+            使用適合深色背景的文字顏色。
+
+            bg-dark：
+            設定深色背景。
+        *@
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-          <div class="container-fluid">
-              <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">BulkyBookWebApp</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarColor02">
-                  <ul class="navbar-nav me-auto">
-                      <li class="nav-item">
-                          <a class="nav-link" asp-controller="Category" asp-action="Index">Category</a>
-                      </li>
-                  </ul>
-              </div>
-          </div>
+
+            @*
+                container-fluid 讓內容使用整個畫面的可用寬度。
+            *@
+            <div class="container-fluid">
+
+                @*
+                    網站品牌名稱或首頁連結。
+
+                    asp-area=""
+                    表示不指定 Area。
+
+                    asp-controller="Home"
+                    表示連到 HomeController。
+
+                    asp-action="Index"
+                    表示執行 Index Action。
+                *@
+                <a class="navbar-brand"
+                   asp-area=""
+                   asp-controller="Home"
+                   asp-action="Index">
+                    BulkyBookWebApp
+                </a>
+
+                @*
+                    小螢幕時顯示的導覽列切換按鈕。
+
+                    data-bs-target="#navbarColor02"
+                    表示按下按鈕時，控制 id="navbarColor02" 的元素。
+
+                    aria-* 屬性主要提供無障礙功能。
+                *@
+                <button class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarColor02"
+                        aria-controls="navbarColor02"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
+
+                    @* Bootstrap 導覽列的漢堡選單圖示。 *@
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                @*
+                    可折疊的導覽列內容。
+
+                    collapse：
+                    預設可以收合。
+
+                    navbar-collapse：
+                    套用 Bootstrap 導覽列收合樣式。
+
+                    id 必須和上方按鈕的
+                    data-bs-target="#navbarColor02" 對應。
+                *@
+                <div class="collapse navbar-collapse"
+                     id="navbarColor02">
+
+                    @*
+                        navbar-nav：
+                        將 ul 設定為導覽列選單。
+
+                        me-auto：
+                        在元素右側加入自動外距，
+                        使後續內容靠向導覽列右側。
+                    *@
+                    <ul class="navbar-nav me-auto">
+
+                        @* Category 選單項目。 *@
+                        <li class="nav-item">
+
+                            @*
+                                連到 CategoryController 的 Index Action。
+
+                                產生的網址通常是：
+                                /Category/Index
+                            *@
+                            <a class="nav-link"
+                               asp-controller="Category"
+                               asp-action="Index">
+                                Category
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
         </nav>
     </header>
+
+    @*
+        網頁主要內容的外層容器。
+
+        container：
+        使用 Bootstrap 固定寬度的響應式容器，
+        並在左右保留適當空間。
+    *@
     <div class="container">
+
+        @*
+            main 表示網頁的主要內容區域。
+
+            pb-3：
+            設定下方 padding，間距大小為 3。
+        *@
         <main role="main" class="pb-3">
+
+            @*
+                載入 _Notification.cshtml Partial View。
+
+                通常用來顯示：
+                TempData 成功訊息
+                TempData 錯誤訊息
+                Toastr 通知
+            *@
             <partial name="_Notification" />
+
+            @*
+                顯示每個 View 的主要內容。
+
+                例如使用：
+                Home/Index.cshtml
+
+                該 View 的內容就會插入到這個位置。
+            *@
             @RenderBody()
+
         </main>
     </div>
 
+    @* 網頁底部 Footer 區域。 *@
     <footer class="footer text-muted bg-dark">
+
+        @*
+            container：
+            限制 Footer 內容寬度並置中。
+
+            mt-3：
+            設定上方 margin，間距大小為 3。
+        *@
         <div class="container mt-3">
-            &copy; 2022 - BulkyBookWebApp - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+
+            @*
+                &copy; 會顯示版權符號 ©。
+
+                Privacy 連結會前往：
+                HomeController 的 Privacy Action。
+            *@
+            &copy; 2022 - BulkyBookWebApp -
+
+            <a asp-area=""
+               asp-controller="Home"
+               asp-action="Privacy">
+                Privacy
+            </a>
         </div>
     </footer>
+
+    @*
+        載入本機的 jQuery。
+
+        實際檔案位置為：
+        wwwroot/lib/jquery/dist/jquery.min.js
+    *@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @*
+        從 CDN 載入 Bootstrap JavaScript Bundle。
+
+        Bundle 版本包含 Popper，
+        可支援下拉選單、導覽列收合、Tooltip 等功能。
+
+        integrity：
+        用來確認下載的檔案沒有被竄改。
+
+        crossorigin="anonymous"：
+        允許瀏覽器跨來源載入 CDN 資源。
+    *@
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous">
+    </script>
+
+    @*
+        載入網站共用的自訂 JavaScript。
+
+        asp-append-version="true"
+        會加入版本碼，避免瀏覽器使用舊快取。
+    *@
+    <script src="~/js/site.js"
+            asp-append-version="true">
+    </script>
+
+    @*
+        顯示各個 View 自己定義的 Scripts 區段。
+
+        required: false
+        表示 View 沒有定義 Scripts 區段也不會發生錯誤。
+
+        View 中可以這樣使用：
+
+        @section Scripts
+        {
+            <script>
+                // 此頁專用 JavaScript
+            </script>
+        }
+    *@
     @await RenderSectionAsync("Scripts", required: false)
+
 </body>
 </html>

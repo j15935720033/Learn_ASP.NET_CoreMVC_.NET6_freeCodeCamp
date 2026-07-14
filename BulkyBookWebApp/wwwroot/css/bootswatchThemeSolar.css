@@ -63,7 +63,8 @@
   --bs-body-font-weight: 400;
   --bs-body-line-height: 1.5;
   --bs-body-color: #839496;
-  --bs-body-bg: #b9bcbd;
+  /* body 顏色backgroundColor */
+  --bs-body-bg: #a1a6a7;
 }
 
 *,
@@ -3091,7 +3092,7 @@ fieldset:disabled .btn {
 }
 
 .btn-primary {
-  color: #fff;
+  color: #f4f3f3;
   background-color: #b58900;
   border-color: #b58900;
 }

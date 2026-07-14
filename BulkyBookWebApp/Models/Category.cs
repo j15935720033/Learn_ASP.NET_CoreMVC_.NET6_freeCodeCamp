@@ -23,6 +23,11 @@ namespace BulkyBookWebApp.Models
         /// 如果沒有輸入名稱，ModelState 驗證會失敗。
         /// </summary>
         [Required(ErrorMessage = "請輸入分類名稱")]
+        ///View中
+        ///<label asp-for="Name" class="text-dark"></label>
+        ///預設名會變成<label>Name</label>
+        ///
+        ///可以使用 [DisplayName] 設定欄位顯示名稱。
         public string Name { get; set; } = string.Empty;
 
         /// <summary>

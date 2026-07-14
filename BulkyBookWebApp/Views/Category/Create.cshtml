@@ -1,30 +1,141 @@
-﻿@model Category
+﻿@* 指定這個 View 使用的資料模型為 Category。 *@
+@model Category
 
+@*
+    建立新增分類的表單。
+
+    method="post"
+    表示送出表單時使用 HTTP POST。
+
+    asp-controller="Category"
+    表示資料會送到 CategoryController。
+
+    asp-action="Create"
+    表示資料會送到 CategoryController 的 Create POST Action。
+*@
 <form method="post" asp-controller="Category" asp-action="Create">
+
+    @* 建立外框，並使用 Bootstrap 設定內距與上方間距。 *@
     <div class="border p-3 mt-4">
+
+        @* 顯示表單標題。 *@
         <div class="row pb-2">
             <h2 class="text-dark">Create Category</h2>
-            <hr/>
+            <hr />
         </div>
+
+        @*
+            顯示整個 Model 的驗證錯誤訊息。
+
+            All 表示：
+            會顯示所有欄位驗證錯誤，以及 Model 層級的錯誤。
+        *@
         <div asp-validation-summary="All"></div>
+
+        @* 分類名稱輸入區域。 *@
         <div class="mb-3">
+
+            @*
+                asp-for="Name"
+                會根據 Category.Name 產生對應的 label。
+            *@
             <label asp-for="Name" class="text-dark"></label>
-            <input asp-for="Name" class="form-control"/>
+
+            @*
+                產生 Category.Name 的輸入欄位。
+
+                使用者輸入的資料送出後，
+                ASP.NET Core MVC 會將資料綁定到 Category.Name。
+            *@
+            <input asp-for="Name" class="form-control" />
+
+            @*
+                顯示 Category.Name 的欄位驗證錯誤。
+
+                例如 Name 使用 [Required]，
+                但使用者沒有輸入時，就會在這裡顯示錯誤訊息。
+            *@
             <span asp-validation-for="Name" class="text-dark"></span>
         </div>
+
+        @* 顯示順序輸入區域。 *@
         <div class="mb-3">
+
+            @*
+                根據 Category.DisplayOrder
+                產生對應的 label。
+            *@
             <label asp-for="DisplayOrder" class="text-dark"></label>
-            <input asp-for="DisplayOrder" class="form-control"/>
+
+            @*
+                產生 Category.DisplayOrder 的輸入欄位。
+
+                使用者輸入的資料會綁定到
+                Category.DisplayOrder。
+            *@
+            <input asp-for="DisplayOrder" class="form-control" />
+
+            @*
+                顯示 Category.DisplayOrder 的欄位驗證錯誤。
+
+                例如超出 [Range] 設定的範圍時，
+                錯誤訊息會顯示在這裡。
+            *@
             <span asp-validation-for="DisplayOrder" class="text-dark"></span>
         </div>
-        <button type="submit" class="btn btn-primary" style="width:150px">Create</button>
-        <a asp-controller="Category" asp-action="Index" class="btn btn-primary" style="width:150px">Back to List</a>
+
+        @*
+            送出按鈕。
+
+            type="submit"
+            表示按下後會送出整個表單，
+            並執行 CategoryController 的 Create POST Action。
+        *@
+        <button type="submit"
+                class="btn btn-primary"
+                style="width:150px">
+            Create
+        </button>
+
+        @*
+            返回分類列表的連結。
+
+            asp-controller="Category"
+            表示前往 CategoryController。
+
+            asp-action="Index"
+            表示執行 Index Action。
+        *@
+        <a asp-controller="Category"
+           asp-action="Index"
+           class="btn btn-primary"
+           style="width:150px">
+            Back to List
+        </a>
+
     </div>
 </form>
 
+@*
+    Scripts 區段會傳給 _Layout.cshtml 中的：
+
+    @await RenderSectionAsync("Scripts", required: false)
+
+    這裡載入前端驗證所需要的 JavaScript。
+*@
 @section Scripts
 {
     @{
-        <partial name="_ValidationScriptsPartial"/>
+        @*
+            載入 _ValidationScriptsPartial.cshtml。
+
+            此 Partial View 通常會載入：
+            jQuery Validation
+            jQuery Validation Unobtrusive
+
+            讓 DataAnnotations 驗證可以在瀏覽器端執行，
+            使用者不需要等表單送到伺服器後才看到錯誤。
+        *@
+        <partial name="_ValidationScriptsPartial" />
     }
 }

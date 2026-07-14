@@ -24,5 +24,17 @@ body {
     height: 60px;
 }
 .myFont{
-  color: #363636;
+  color: #2a2a3e;
+}
+
+.table-black {
+  --bs-table-bg: #1c7dc2;
+  --bs-table-striped-bg: #1c7dc2;
+  --bs-table-striped-color: #0f0f0f;
+  --bs-table-active-bg: #1c7dc2;
+  --bs-table-active-color: #0f0f0f;
+  --bs-table-hover-bg: #1c7dc2;
+  --bs-table-hover-color: #0f0f0f;
+  color: #dddddd;
+  border-color: #1c7dc2;
 }
