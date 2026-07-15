@@ -1,21 +1,24 @@
-﻿@model Category
+@model Category
 
-<form method="post" asp-controller="Category" asp-action="Edit">
+@{
+    ViewData["Title"] = "刪除分類";
+}
+
+<form method="post" asp-action="Delete">
+
+    <!-- 把分類 Id 傳給 DeletePost(int? id) -->
+    <input asp-for="Id" type="hidden" />
 
     <div class="border border-secondary rounded p-4 mt-4 bg-dark">
 
         <div class="row pb-2">
 
-            <h4 class="text-light fw-semibold">
-                Edit Category
-            </h4>
+            <h2 class="text-light fw-semibold">
+                刪除分類
+            </h2>
 
             <hr class="border-secondary opacity-100" />
 
-        </div>
-
-        <div asp-validation-summary="All"
-             class="text-danger fw-semibold">
         </div>
 
         <div class="mb-3">
@@ -24,12 +27,10 @@
                    class="form-label text-light fw-semibold">
             </label>
 
+            <!-- disabled 表示只能看，不能修改 -->
             <input asp-for="Name"
-                   class="form-control border-secondary" />
-
-            <span asp-validation-for="Name"
-                  class="text-danger fw-semibold">
-            </span>
+                   class="form-control border-secondary bg-light text-dark"
+                   disabled />
 
         </div>
 
@@ -40,22 +41,20 @@
             </label>
 
             <input asp-for="DisplayOrder"
-                   class="form-control border-secondary" />
-
-            <span asp-validation-for="DisplayOrder"
-                  class="text-danger fw-semibold">
-            </span>
+                   class="form-control border-secondary bg-light text-dark"
+                   disabled />
 
         </div>
 
         <div class="d-flex gap-2">
 
+            <!-- 送出後會進入 CategoryController 的 DeletePost 方法 -->
             <button type="submit"
-                    class="btn btn-info fw-semibold"
+                    class="btn btn-danger fw-semibold"
                     style="width:150px">
 
-                <i class="bi bi-pencil-square"></i>
-                &nbsp; Edit
+                <i class="bi bi-trash3"></i>
+                &nbsp;刪除
 
             </button>
 
@@ -65,7 +64,7 @@
                style="width:150px">
 
                 <i class="bi bi-arrow-left-circle"></i>
-                &nbsp; Back to List
+                &nbsp;返回列表
 
             </a>
 
@@ -74,10 +73,3 @@
     </div>
 
 </form>
-
-@section Scripts
-{
-    @{
-        <partial name="_ValidationScriptsPartial" />
-    }
-}

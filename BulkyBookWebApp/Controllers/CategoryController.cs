@@ -262,6 +262,7 @@ namespace BulkyBookWebApp.Controllers
         /// 找到資料：顯示 Delete View。
         /// 找不到資料：回傳 404 Not Found。
         /// </returns>
+        /*
         [HttpGet]
         public IActionResult Delete(int? id)
         {
@@ -282,6 +283,39 @@ namespace BulkyBookWebApp.Controllers
             // 此時尚未真正刪除資料。
             return View(categoryFromDb);
         }
+        */
+
+        // 直接刪除
+        public IActionResult Delete(int? id)
+        {
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+
+            // 使用主鍵取得要刪除的分類。
+            Category? categoryFromDb = _db.Categories.Find(id);
+
+            // 找不到資料時回傳 HTTP 404，
+            // 避免原本使用 Single() 時因查不到資料而發生例外。
+            if (categoryFromDb == null)
+            {
+                return NotFound();
+            }
+
+            // 將資料標記為刪除。
+            _db.Categories.Remove(categoryFromDb);
+
+            // 實際執行 DELETE。
+            _db.SaveChanges();
+
+            TempData["success"] = "分類刪除成功。";
+
+            return RedirectToAction(nameof(Index));
+        }
+
+
+
 
         /// <summary>
         /// 確認並執行刪除分類。

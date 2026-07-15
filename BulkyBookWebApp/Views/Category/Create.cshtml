@@ -16,12 +16,15 @@
 <form method="post" asp-controller="Category" asp-action="Create">
 
     @* 建立外框，並使用 Bootstrap 設定內距與上方間距。 *@
-    <div class="border p-3 mt-4">
+    <div class="border border-secondary rounded p-4 mt-4 bg-dark">
 
         @* 顯示表單標題。 *@
         <div class="row pb-2">
-            <h2 class="text-dark">Create Category</h2>
-            <hr />
+            <h2 class="text-light fw-semibold">
+                Create Category
+            </h2>
+
+            <hr class="border-secondary opacity-100" />
         </div>
 
         @*
@@ -30,7 +33,9 @@
             All 表示：
             會顯示所有欄位驗證錯誤，以及 Model 層級的錯誤。
         *@
-        <div asp-validation-summary="All"></div>
+        <div asp-validation-summary="All"
+             class="text-danger fw-semibold">
+        </div>
 
         @* 分類名稱輸入區域。 *@
         <div class="mb-3">
@@ -39,7 +44,9 @@
                 asp-for="Name"
                 會根據 Category.Name 產生對應的 label。
             *@
-            <label asp-for="Name" class="text-dark"></label>
+            <label asp-for="Name"
+                   class="form-label text-light fw-semibold">
+            </label>
 
             @*
                 產生 Category.Name 的輸入欄位。
@@ -47,7 +54,8 @@
                 使用者輸入的資料送出後，
                 ASP.NET Core MVC 會將資料綁定到 Category.Name。
             *@
-            <input asp-for="Name" class="form-control" />
+            <input asp-for="Name"
+                   class="form-control border-secondary" />
 
             @*
                 顯示 Category.Name 的欄位驗證錯誤。
@@ -55,7 +63,9 @@
                 例如 Name 使用 [Required]，
                 但使用者沒有輸入時，就會在這裡顯示錯誤訊息。
             *@
-            <span asp-validation-for="Name" class="text-dark"></span>
+            <span asp-validation-for="Name"
+                  class="text-danger fw-semibold">
+            </span>
         </div>
 
         @* 顯示順序輸入區域。 *@
@@ -65,7 +75,9 @@
                 根據 Category.DisplayOrder
                 產生對應的 label。
             *@
-            <label asp-for="DisplayOrder" class="text-dark"></label>
+            <label asp-for="DisplayOrder"
+                   class="form-label text-light fw-semibold">
+            </label>
 
             @*
                 產生 Category.DisplayOrder 的輸入欄位。
@@ -73,7 +85,8 @@
                 使用者輸入的資料會綁定到
                 Category.DisplayOrder。
             *@
-            <input asp-for="DisplayOrder" class="form-control" />
+            <input asp-for="DisplayOrder"
+                   class="form-control border-secondary" />
 
             @*
                 顯示 Category.DisplayOrder 的欄位驗證錯誤。
@@ -81,37 +94,48 @@
                 例如超出 [Range] 設定的範圍時，
                 錯誤訊息會顯示在這裡。
             *@
-            <span asp-validation-for="DisplayOrder" class="text-dark"></span>
+            <span asp-validation-for="DisplayOrder"
+                  class="text-danger fw-semibold">
+            </span>
         </div>
 
-        @*
-            送出按鈕。
+        @* 建立按鈕區域，讓按鈕保持適當間距。 *@
+        <div class="d-flex gap-2">
 
-            type="submit"
-            表示按下後會送出整個表單，
-            並執行 CategoryController 的 Create POST Action。
-        *@
-        <button type="submit"
-                class="btn btn-primary"
-                style="width:150px">
-            Create
-        </button>
+            @*
+                送出按鈕。
 
-        @*
-            返回分類列表的連結。
+                type="submit"
+                表示按下後會送出整個表單，
+                並執行 CategoryController 的 Create POST Action。
+            *@
+            <button type="submit"
+                    class="btn btn-success fw-semibold"
+                    style="width:150px">
 
-            asp-controller="Category"
-            表示前往 CategoryController。
+                <i class="bi bi-plus-circle"></i>
+                &nbsp; Create
+            </button>
 
-            asp-action="Index"
-            表示執行 Index Action。
-        *@
-        <a asp-controller="Category"
-           asp-action="Index"
-           class="btn btn-primary"
-           style="width:150px">
-            Back to List
-        </a>
+            @*
+                返回分類列表的連結。
+
+                asp-controller="Category"
+                表示前往 CategoryController。
+
+                asp-action="Index"
+                表示執行 Index Action。
+            *@
+            <a asp-controller="Category"
+               asp-action="Index"
+               class="btn btn-secondary fw-semibold"
+               style="width:150px">
+
+                <i class="bi bi-arrow-left-circle"></i>
+                &nbsp; Back to List
+            </a>
+
+        </div>
 
     </div>
 </form>

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Workspace\\ASPNET\\Learn_ASP.NET_CoreMVC_.NET6_freeCodeCamp\\BulkyBookWebApp\\BulkyBookWebApp.csproj": {}
+    "D:\\台中勞動部全端網頁_workspace\\Workspace\\ASPNET\\Learn_ASP.NET_CoreMVC_.NET6_freeCodeCamp\\BulkyBookWebApp\\BulkyBookWebApp.csproj": {}
   },
   "projects": {
-    "c:\\Workspace\\ASPNET\\Learn_ASP.NET_CoreMVC_.NET6_freeCodeCamp\\BulkyBookWebApp\\BulkyBookWebApp.csproj": {
+    "D:\\台中勞動部全端網頁_workspace\\Workspace\\ASPNET\\Learn_ASP.NET_CoreMVC_.NET6_freeCodeCamp\\BulkyBookWebApp\\BulkyBookWebApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Workspace\\ASPNET\\Learn_ASP.NET_CoreMVC_.NET6_freeCodeCamp\\BulkyBookWebApp\\BulkyBookWebApp.csproj",
+        "projectUniqueName": "D:\\台中勞動部全端網頁_workspace\\Workspace\\ASPNET\\Learn_ASP.NET_CoreMVC_.NET6_freeCodeCamp\\BulkyBookWebApp\\BulkyBookWebApp.csproj",
         "projectName": "BulkyBookWebApp",
-        "projectPath": "c:\\Workspace\\ASPNET\\Learn_ASP.NET_CoreMVC_.NET6_freeCodeCamp\\BulkyBookWebApp\\BulkyBookWebApp.csproj",
+        "projectPath": "D:\\台中勞動部全端網頁_workspace\\Workspace\\ASPNET\\Learn_ASP.NET_CoreMVC_.NET6_freeCodeCamp\\BulkyBookWebApp\\BulkyBookWebApp.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "c:\\Workspace\\ASPNET\\Learn_ASP.NET_CoreMVC_.NET6_freeCodeCamp\\BulkyBookWebApp\\obj\\",
+        "outputPath": "D:\\台中勞動部全端網頁_workspace\\Workspace\\ASPNET\\Learn_ASP.NET_CoreMVC_.NET6_freeCodeCamp\\BulkyBookWebApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -29,6 +29,7 @@
         },
         "frameworks": {
           "net6.0": {
+            "framework": "net6.0",
             "targetAlias": "net6.0",
             "projectReferences": {}
           }
@@ -42,10 +43,12 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "10.0.300"
       },
       "frameworks": {
         "net6.0": {
+          "framework": "net6.0",
           "targetAlias": "net6.0",
           "dependencies": {
             "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
@@ -82,24 +85,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.27, 6.0.27]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[6.0.27, 6.0.27]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.27, 6.0.27]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[6.0.27, 6.0.27]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -108,7 +93,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

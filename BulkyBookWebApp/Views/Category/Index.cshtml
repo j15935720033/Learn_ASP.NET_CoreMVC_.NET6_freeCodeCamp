@@ -1,8 +1,8 @@
 ﻿@*
-    @model : 指定這個 View 要接收的資料型別
-    IEnumerable<T> : 表示可以逐筆列舉的集合
-    Category : 集合內每一筆資料的型別
-    IEnumerable<Category> : 多筆 `Category` 資料
+    @model：指定這個 View 要接收的資料型別
+    IEnumerable<T>：表示可以逐筆列舉的集合
+    Category：集合內每一筆資料的型別
+    IEnumerable<Category>：代表多筆 Category 資料
 *@
 @model IEnumerable<Category>
 
@@ -11,46 +11,99 @@
 }
 
 <div class="container p-3">
-    <div class="row mt-4 mb-4">
+
+    <div class="row mt-4 mb-4 align-items-center">
         <div class="col-6">
-            <h2 class="text-dark">Category List</h2>
+
+            <!-- 深色背景改用淺色標題 -->
+            <h2 class="text-light fw-semibold mb-0">
+                Category List
+            </h2>
+
         </div>
+
         <div class="col-6 text-end">
-            <a asp-controller="Category" asp-action="Create" class="btn btn-dark">
-                <i class="bi bi-plus-circle"></i> &nbsp; Create New Category
+
+            <!-- 使用綠色按鈕，和背景區隔更清楚 -->
+            <a asp-controller="Category"
+               asp-action="Create"
+               class="btn btn-success">
+
+                <i class="bi bi-plus-circle"></i>
+                &nbsp; Create New Category
+
             </a>
+
         </div>
     </div>
-    <table class="table table-bordered table-striped" style="width:100%">
-        <thead class="table-black">
+
+    <!--
+        table-dark：使用深色表格
+        table-striped：奇數列與偶數列使用不同背景
+        table-hover：滑鼠移入時顯示醒目效果
+        align-middle：內容垂直置中
+    -->
+    <table class="table table-dark table-bordered table-striped table-hover align-middle"
+           style="width: 100%;">
+
+        <!-- 藍色表頭搭配白色文字 -->
+        <thead class="table-primary">
             <tr>
-                <th>Category Name</th>
-                <th>Display Order</th>
-                <th>Actions</th>
+                <th class="text-white">
+                    Category Name
+                </th>
+
+                <th class="text-white">
+                    Display Order
+                </th>
+
+                <th class="text-white">
+                    Actions
+                </th>
             </tr>
         </thead>
+
         <tbody>
-            @foreach (var obj in Model)
+            @foreach (Category obj in Model)
             {
                 <tr>
-                    <td class="text-dark"width="50%">
+                    <!-- 移除 text-dark，避免深色文字看不清楚 -->
+                    <td class = "text-light fw-semibold " width="50%">
                         @obj.Name
                     </td>
-                    <td class="text-dark"width="30%">
+
+                    <td class="text-light fw-semibold" width="30%">
                         @obj.DisplayOrder
                     </td>
+
                     <td width="20%">
                         <div class="btn-group" role="group">
-                            <a asp-controller="Category" asp-action="Edit" asp-route-id="@obj.Id" class="btn btn-primary">
-                                <i class="bi bi-pencil-square"></i> &nbsp; Edit
+
+                            <a asp-controller="Category"
+                               asp-action="Edit"
+                               asp-route-id="@obj.Id"
+                               class="btn btn-info">
+
+                                <i class="bi bi-pencil-square"></i>
+                                &nbsp; Edit
+
                             </a>
-                            <a asp-controller="Category" asp-action="Delete" asp-route-id="@obj.Id" class="btn btn-danger">
-                                <i class="bi bi-trash3"></i> &nbsp; Delete
+
+                            <a asp-controller="Category"
+                               asp-action="Delete"
+                               asp-route-id="@obj.Id"
+                               class="btn btn-danger">
+
+                                <i class="bi bi-trash3"></i>
+                                &nbsp; Delete
+
                             </a>
+
                         </div>
                     </td>
                 </tr>
             }
         </tbody>
     </table>
+
 </div>

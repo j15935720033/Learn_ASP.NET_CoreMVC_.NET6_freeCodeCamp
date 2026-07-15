@@ -1,0 +1,6 @@
+# .NET 編譯輸出
+**/bin/
+**/obj/
+
+# ASP.NET Core 發佈輸出
+publish/
